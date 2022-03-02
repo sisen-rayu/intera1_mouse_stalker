@@ -1,2 +1,54 @@
 @charset "utf-8";
 
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: sans-serif;
+  overflow: hidden;
+  // cursor: none; <=個人的には矢印のカーソルあったほうが操作しやすい
+}
+
+#cursor {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #000;
+  box-sizing: border-box;
+  transition: 0.1s;
+  transform: translate(-50%,-50%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+h1 {
+  color: #000;
+  &:hover ~ #cursor {
+    width: 100px;
+    height: 100px;
+    border: 2px dashed;
+  }
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+}
+
+.figure {
+  width: 150px;
+  height: 150px;
+  background: red;
+  &:hover ~ #cursor {
+    width: 100px;
+    height: 100px;
+    border: 2px dashed;
+  }
+  a {
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
